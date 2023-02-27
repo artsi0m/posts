@@ -1,0 +1,53 @@
+** Blog
+
+[[Subscribe]] (Atom feed on master branch)
+
+I will try to commit to this branch only if post is ready enough
+fro you to read. Feel free to give this repo a star if you find
+something interesting.
+
+
+** Why it looks like this ?
+
+I moved here from my telegram channel of 40 subs and start writing here.
+There would be more posts on telegram channel linked here,
+but eventually i want to setup site in a form of digital garden with ability to
+get notified about new posts. That said, i feel that text in
+a blog is much more important than software that show it up on webpage and
+i also don't want to spend a lot of time and effort for сreating site
+just to show two or three pages of content.
+
+I also choose org format for blog intentionally, because it is much more
+convinient for me than markdown syntaxtically. In fact that first file in
+this repository contain text that was at first posted in Telegram, only
+to realize that it can't handle this text properly, so =__LINE__= macro
+from C would be shown in italic and not monospace.
+
+Another advantage is a git dvcs nature. If this repo on github would be
+lost i will have a local copy on my laptop. If telegram would be lost
+i can do nothing about it.
+
+And i even can start to sign my commits with gpg key.
+
+
+** Would it look better in the future ?
+
+With enough posts, probably.
+But it wouldn't be done as fast as possible.
+I need some time to study in university and many more import things IRL.
+
+** Who you are ?
+
+My name is Артём (Artyom), although most of my internet friends pronounce it as
+transliteration of my nickname – Артсиом (artsi0m). I use this nickname long enough,
+it was born due transliteration (again) of russian name into belarussian one in my
+passport. Yes, i live in Belarus, in it's capital city – Minsk.
+I am also a student of Belarussian State University of Informatics and Radioelectronics.
+
+I am not sure what else to put here, i have broad interest of doing
+cool things (tm), thats why i put effort in studying and
+also sometimes do something interconnected with system programming using C.
+I like Bad Apple.
+
+Oh, and also for the first time most posts would be written russian, probably,
+it is my mother tongue, so it would be easier for me to use it in some cases.
