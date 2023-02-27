@@ -51,3 +51,11 @@ I like Bad Apple.
 
 Oh, and also for the first time most posts would be written russian, probably,
 it is my mother tongue, so it would be easier for me to use it in some cases.
+
+
+** Keys
+
+If someone want some proof that i am in fact the same person from telegram
+i added signify key that i published before in my channel.
+It is stored in telegram.pub file in the root of this repo.
+Read [[https://man.openbsd.org/signify][man page]] to find out how to use it.
