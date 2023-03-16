@@ -1,6 +1,6 @@
 ** Blog
 
-[[Subscribe]] (Atom feed on master branch)
+[[https://github.com/artsi0m/posts/commits/master.atom][Subscribe]] (Atom feed on master branch)
 
 I will try to commit to this branch only if post is ready enough
 fro you to read. Feel free to give this repo a star if you find
