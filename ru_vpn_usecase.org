@@ -28,7 +28,7 @@ https://www.postgresql.org/docs/current/ssh-tunnels.html
 
 
 **** Тэги.
-Они теперь будут выглядет так потому что я использую [[https://howm.osdn.jp/][howm].
+Они теперь будут выглядет так потому что я использую [[https://howm.osdn.jp/][howm]].
 
 <<< vpn
 <<< wireguard
