@@ -11,14 +11,12 @@ something interesting.
 
 I moved here from my telegram channel of 40 subs and start writing here.
 There would be more posts on telegram channel linked here,
-but eventually i want to setup site in a form of digital garden with ability to
-get notified about new posts. That said, i feel that text in
-a blog is much more important than software that show it up on webpage and
-i also don't want to spend a lot of time and effort for сreating site
-just to show two or three pages of content.
+but eventually i want to setup blog site +in a form of digital garden+ with ability to get notified about new posts and articles being interliked with each other, like in the channel.
 
-I also choose org format for blog intentionally, because it is much more
-convinient for me than markdown syntaxtically. In fact that first file in
+That said, i feel that text in a blog is much more important than software that show it up on webpage and i also don't want to spend a lot of time and effort for сreating site just to show two or three pages of content.
+
+I also choose org format for blog intentionally, because it is much more convinient for me than markdown syntaxtically.
+In fact that first file in
 this repository contain text that was at first posted in Telegram, only
 to realize that it can't handle this text properly, so =__LINE__= macro
 from C would be shown in italic and not monospace.
@@ -35,6 +33,9 @@ And i even can start to sign my commits with gpg key.
 With enough posts, probably.
 But it wouldn't be done as fast as possible.
 I need some time to study in university and many more import things IRL.
+
+Also I need to figure out how to create transpiler from org to simple html,
+or, and that might be better, to think how to use pandoc for it and how to cache articles on the site.
 
 ** Who you are ?
 
@@ -55,7 +56,10 @@ it is my mother tongue, so it would be easier for me to use it in some cases.
 
 ** Keys
 
-If someone want some proof that i am in fact the same person from telegram
-i added signify key that i published before in my channel.
-It is stored in telegram.pub file in the root of this repo.
++If someone want some proof that i am in fact the same person from telegram+
++i added signify key that i published before in my channel.+
++It is stored in telegram.pub file in the root of this repo.+
+
+I created new signify pubkey, and lost privkey for this one.
+For now you can only check by looking at the link that I posted on the channel.
 Read [[https://man.openbsd.org/signify][man page]] to find out how to use it.
