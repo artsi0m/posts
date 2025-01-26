@@ -1,7 +1,7 @@
 # -*- mode: org; -*-
 * howm & org-drill: how I combined note taking tool with flashcards
 
-# Place for the screen-cast
+[[https://github.com/user-attachments/assets/e51ebe0d-e1a0-43da-9a3b-bebaf83ee810][Screencast]]
 
 ** Abstract
 
