@@ -54,7 +54,7 @@ Howm-mode is minor mode, meaning that it can be used with in
 combination at the same time with one major mode like org-mode and
 multiple minor-modes.
 
-The Howm markup is pimple: = symbol at the start of the line creates
+The Howm markup is simple: = symbol at the start of the line creates
 a title for the given note and there could be multiple titles in the
 same file.
 
