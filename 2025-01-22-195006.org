@@ -1,25 +1,24 @@
 # -*- mode: org; -*-
-* howm & org-drill: how I combined note taking tool with flashcards
+* howm & org-drill: Note-taking tool with flashcards combined
 
 [[https://github.com/user-attachments/assets/e51ebe0d-e1a0-43da-9a3b-bebaf83ee810][Screencast]]
 
 ** Abstract
 
-This article explains in details internals of system for knowledge
-management and active recall that can be created by combining Emacs
-packages:
+The article contains the detailed presentation of the environment that is designed
+ to be used for knowledge management and active recall,
+based upon a set of Emacs packages, the names of which are given below:
 - howm,
 - org,
 - org-drill.
 
-This system consist of Emacs lisp code that glues together these
-various modes. Code would be placed in order of execution. With this
-article distributed in the form of file in org-mode format, you can
-rewrite it and tangle source code block into your Emacs config.  This
-feature is part of org-mode and org-babel.
+This environment glues together these various modes with added Lisp code.
+Code would be placed in order of execution given below. With this
+article provided as an org-mode-formatted file, one can
+edit it and tangle the source code block into the Emacs config via org-mode and org-babel.
 
-Idea for that system comes out due to inability to use RemNote —
-proprietary software for note-taking with ability to easily convert
+The idea for this solution comes from the author's inability to use RemNote —
+a proprietary software for note-taking, with an option to easily convert
 notes into flashcards.
 
 ** Prerequisites
@@ -35,8 +34,8 @@ Org-drill can be installed with this simple use-package directive:
 #+end_src
 
 **** workarounds for org-drill
-Unfortunately there are some bugs present in org-drill, so I would
-leave here this workaround for this package that I found on reddit
+Unfortunately, there are various bugs present in org-drill; however 
+the workaround for this package, found on reddit, is provided below:
 #+begin_src elisp
   (defun org-drill-time-to-inactive-org-timestamp (time)
   "Convert TIME into org-mode timestamp."
@@ -46,35 +45,34 @@ leave here this workaround for this package that I found on reddit
 #+end_src
 
 
-Link to discussion through the altfrontend:
+Link to discussion on the Reddit altfrontend:
 https://safereddit.com/r/orgmode/comments/1g51wtc/orgdrill_gives_me_the_error_not_an_org_time_string/
 
 *** howm
-Howm-mode is minor mode, meaning that it can be used with in
-combination at the same time with one major mode like org-mode and
-multiple minor-modes.
+Howm-mode is a minor mode, meaning that it can be used in
+combination with a selected major mode - like org-mode - and
+multiple minor-modes simultaneously.
 
 The Howm markup is simple: = symbol at the start of the line creates
-a title for the given note and there could be multiple titles in the
+a title for the given note; one might add multiple titles in the
 same file.
 
-3 > characters create a link that in howm works like a search query, after
-entering on this link, you would see a search result with all the heading of the
-text files that contain parts of the search query.
+3 > characters create a link that works in howm like a search query; after
+entering this link, one would see a search result with all the headings from the
+text files containing parts of the search query.
 
-3 < symbols would also create a search query, but instead of linking it
-would be more like hashtag. After saving the file with this link
-you would see words typed in it highlighted as links everywhere in your
-notes.
+3 < symbols create a search query as well, but instead of linking it
+would be similar to a hashtag. After saving the file with such link,
+the words typed in it are to be highlighted as links across the enitre set of notes.
 
-As I said before, howm-mode is a minor mode and can be combined with
-other Emacs modes. It is possible to configure it for use with org-mode
-or markdown-mode. There is also a way to use multiple major mode
+As mentioned above, the howm-mode is a minor mode and can be combined with
+other Emacs modes. It is possible to configure it for usage with either org-mode
+or markdown-mode. One can also use multiple major mode
 markups with howm-mode.
 
-**** howm with org-mode as default markup
+**** howm with org-mode as a default markup
 
-Simple use-package directive as in official quick start.
+Simple use-package directive, as in the official Quick Start.
 
 #+begin_src elisp
   (use-package howm
@@ -93,24 +91,24 @@ Simple use-package directive as in official quick start.
 
 
 
-**** howm with function to select any available major mode
-Simple use-package directive although you can modify previous one,
-removing =howm-view-title-header= variable.
+**** howm with function to select any major mode available
+Simple use-package directive; one can modify the above-mentioned one
+by removing =howm-view-title-header= variable as well.
 
 #+begin_src elisp
      (use-package howm :config
        :ensure t)
 #+end_src
 
-Emacs could set local variables as comments in edited files.  There is
-also a way to do it in one line at the start of the file called
-prop-line. More often it was used to add encoding local variable into
-file with python source code.
+Emacs can set local variables as comments in the edited files. There is
+also a way to do it in one line at the start of the file, called
+a prop-line. It used to be applied to add local encoding variable into
+a file with Python source code.
 
-Emacs would automatically switch to the major mode selected in
-prop-line after opening file.
+Emacs would automatically switch to major mode selected in
+prop-line once the file is opened.
 
-Here is a function to add prop-line to the file.
+Below is a function to add a prop-line to the file.
 
 #+begin_src elisp
     (defun howm-insert-prop-line (mode)
@@ -128,23 +126,23 @@ Here is a function to add prop-line to the file.
 	     'mode (intern (string-trim-right (symbol-name mode) "-mode\\'")))))
 #+end_src
 
-There is also a general function for adding prop-line, written by howm
-author himself.
+One can also use the general function for adding prop-line, as written by the author
+of howm himself.
 
-I like to keep my writings in howm, but I also plan to put these text
-in other places where different markup languages could be used such as
-markdown. I also deeply admire org-mode capabilities. And I don't like
-the idea of having to choose between markup languages, when I can use
-many of them. So I tried to create a workflow for managing notes in
-multiple formats. It may seem to be a little bit clunky, but I
-believe it will be improved in the future.
+Although keeping the writings in howm is preferable for myself, a need to transfer
+the texts in various other places, where different markup languages, such as
+markdown, could be used, exists. While admiring the org-mode capabilities deeply,
+I don't like the idea of having to choose between markup languages, whereas I can use
+several of such. That resulted in my attempt to create a workflow for managing notes in
+multiple formats. One can argue that it is a little bit clunky, but I
+believe there is enough space for improvement.
 
 ** code in order of execution
 
 I wrote 2 elisp functions that will be executed after starting
-org-drill session. To execute them I wrote advises for =org-drill= and
+org-drill session. To execute them, I wrote advises for =org-drill= and
 =org-drill-cram= functions, so that advice's would call my function
-before executing org-drill functions.
+before executing the org-drill functions.
 
 #+begin_src elisp
   (define-advice org-drill (:before (&rest _args))
@@ -155,9 +153,9 @@ before executing org-drill functions.
 #+end_src
 
 So, advice's would execute a function for setting scope in org-drill.
-By default org-drill does not operate on decks of flashcards, but uses
-scopes — variables that contain information in which files to search
-for flashcards.
+By default, org-drill does not operate on decks of flashcards, but uses
+scopes — a set of variables containing information in which files to search
+for the flashcards.
 
 Here is my function for choosing scope:
 
@@ -179,14 +177,14 @@ Here is my function for choosing scope:
 #+end_src
 
 
-Note that this "howm" scope is non-existent in org-drill itself.  And
-when selecting this option scope would be set to a list of files
+Note that this "howm" scope is non-existent in org-drill itself. So 
+when selecting this option, scope would be set to a list of files
 containing all files in howm with tag =:drill:=.  Yes, that is
-org-mode tag, but due to the fact that howm simply uses =grep=
-underneath it is possible to return the list of files that contain
-given string.
+an org-mode tag, but due to the fact that howm simply uses =grep=
+underneath, it is, however, possible to return the list of files that contain
+the given string.
 
-Here is that function that returns list of files for howm scope.
+Here is a function that returns the said list of files for howm scope.
 
 #+begin_src elisp
   (defun my-org-drill-file-names-in-howm ()
@@ -196,15 +194,14 @@ Here is that function that returns list of files for howm scope.
 			    (howm-files-in-directory howm-directory)))))
 #+end_src
 
-That all, really. As I said at the start of the paragraph there are
+That is all, really. As I said at the start of the paragraph there are
 only two functions needed to implement given system.
 
 ** Conclusion
 
-Here was shown how easy it is to create out-liner with functions of
+Above is a demonstration of how easy it is to create an out-liner with functions of
 personal wiki and active recall learning software interconnected in
 one lisp image of GNU Emacs.
 
-I hope it will become more widespread and adopted than similar
-proprietary solutions, because it several times better in
-extensibility.
+I hope that it will become more widespread and will be adopted more often
+than similar proprietary solutions, since it is much more extensible.
