@@ -1,7 +1,7 @@
 # -*- mode: org; -*-
-* howm & org-drill: Note-taking tool with flashcards combined
+* howm meets org-drill: Note-taking tool with flashcards combined
 
-[[https://github.com/user-attachments/assets/e51ebe0d-e1a0-43da-9a3b-bebaf83ee810][Screencast]]
+[[https://github.com/user-attachments/assets/c1133f42-9b48-42be-9b50-08254ac86b60][Screencast]]
 
 ** Abstract
 
