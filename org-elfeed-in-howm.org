@@ -1,12 +1,14 @@
 * org-elfeed in howm
 
-[[https://github.com/skeeto/elfeed][Elfeed]] in my config was interconnected with [[https://kaorahi.github.io/howm/][howm]] using [[https://github.com/remyhonig/elfeed-org][org-elfeed]].  I
-don't need it in my config anymore, because I switched to gnus and now
+
+[[https://github.com/skeeto/elfeed][Elfeed]]  was connected to [[https://kaorahi.github.io/howm/][howm]] via [[https://github.com/remyhonig/elfeed-org][org-elfeed]].
+
+I don't need it in my config anymore, because I switched to gnus and now
 I have even shorter list of RSS subscriptions.  You can take it and
 try to make a proper package.
 
 
-** elfeed use-package:
+*** elfeed use-package:
 #+BEGIN_SRC elisp
   (use-package elfeed
   :ensure t
@@ -18,7 +20,7 @@ try to make a proper package.
 
 #+RESULTS:
 
-** elfeed-org use-package
+*** elfeed-org use-package
 #+BEGIN_SRC elisp
 (use-package elfeed-org
   :ensure t
@@ -30,7 +32,7 @@ try to make a proper package.
 #+RESULTS:
 : t
 
-** functions for interconnecting with howm
+*** functions for interconnecting with howm
 #+BEGIN_SRC elisp
 (defun my-elfeed-file-names-in-howm ()
   "Return list of absolute filenames of org-elfeed files in howm"
@@ -43,7 +45,7 @@ try to make a proper package.
 #+RESULTS:
 : my-elfeed-file-names-in-howm
 
-** advices for executing functions
+*** advices for executing functions
 #+BEGIN_SRC elisp
 (define-advice elfeed (:before (&rest _args))
   (setq rmh-elfeed-org-files (my-elfeed-file-names-in-howm)))
@@ -53,3 +55,5 @@ try to make a proper package.
   (setq rmh-elfeed-org-files (my-elfeed-file-names-in-howm)))
 #+END_SRC
 
+** BUGS
+Wouldn't work without execution of =M-x elfeed= and =M-x elfeed-update= in the first place.
